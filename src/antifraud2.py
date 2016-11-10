@@ -39,7 +39,7 @@ with open(input_batch, 'r') as f:
 
         i += 1
 
-        connections.addEdge(user_1, user_2)
+        connections.add_edge(user_1, user_2)
 
 input_stream = os.path.relpath('..\\paymo_input\\stream_payment_trimmed.csv', cur_path)
 
@@ -75,6 +75,6 @@ with open(output_stream, 'w') as fout:
             i += 1
             fout.write(feature_2(connections, user_1, user_2) + "\n")
 
-            connections.addEdge(user_1, user_2)
+            connections.add_edge(user_1, user_2)
 
 logger.info("Done!")
