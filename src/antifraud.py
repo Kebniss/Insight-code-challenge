@@ -1,6 +1,5 @@
 import os
 import inspect
-from features import *
 from Graph import Graph
 import logging
 import argparse
