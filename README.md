@@ -24,4 +24,4 @@ The average time of execution of one query is 0.1ms, 0.4ms and 7ms when distance
 
 # Extra features
 
-By adding union-find it is now possible to check if two users are within the same connected component or not.
+Thanks to the Union-Find data structure, we can efficiently check whether two users are at all connected (regardless of the distance) very, very fast. This feature may be a good compromise between security and performance in case the service needed to scale to a very large amount of users (quasi-constant vs linear). Usually, decisions like these are taken by a classifier, that can learn what factors are relevant in these decisions directly from the data. Given that the infrastructure would allow a limited budget in ms per user query, it is often better to allocate more of this budget to a classifier, thus the savings we'd get by relaxing the _max_distance_ constraint to a simple general connectivity problem would allow for a more complex classifier and, very likely, more classification accuracy.
