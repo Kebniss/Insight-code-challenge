@@ -94,8 +94,13 @@ class Graph(object):
         if not self.are_connected(s, t):
             return False # if either one of the two is not in the graph they can't be connected
 
-        if s == t: # implicitly it exists edge between a vertex and itself
+        # if they are directly connected distance is 1
+        if self.exists_edge(s,t) and limit > 0:
             return True
+
+        if s == t and s in self.g:
+            return True # implicitly it exists edge between a vertex and itself
+
 
         marked_s = {}
         marked_t = {}
