@@ -97,6 +97,8 @@ class Graph(object):
         # if they are directly connected distance is 1
         if self.exists_edge(s,t) and limit > 0:
             return True
+        elif limit == 1:
+            return False
 
         if s == t and s in self.g:
             return True # implicitly it exists edge between a vertex and itself
